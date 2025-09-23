@@ -2,11 +2,13 @@ import NavItem from "./NavigationItem";
 
 const NavigationBar = () => {
   return (
-    <nav className="navbar bg-white shadow-md">
-      <div className="container mx-auto px-4">
-        <ul className="flex space-x-8 py-4">
+    <nav className="bg-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between py-4">
+        <li className="flex">Jerry's Logo</li>
+        <ul className="flex space-x-8">
           <NavItem href="#home">Home</NavItem>
           <NavItem href="#about">About</NavItem>
+          <NavItem href="#experience">Experience</NavItem>
           <NavItem href="#contact">Contact</NavItem>
         </ul>
       </div>
