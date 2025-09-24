@@ -6,19 +6,19 @@ function App() {
     <>
       <NavigationBar />
       <section id="home" className="pt-20 min-h-screen flex items-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold">Home Section</h1>
-          <p className="mt-4 text-lg">Welcome to the home section</p>
-        </div>
-      </section>
+        <div className="container mx-auto px-4 bg-gray-300 rounded-3xl ">
+          <h1 className="text-4xl text-center font-bold">Welcome!!</h1>
+          <h2 className="mt-4  text-center text-lg">Hi, I'm Jerry Nava</h2>
 
-      <section
-        id="about"
-        className="pt-20 min-h-screen flex items-center bg-gray-50"
-      >
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold">About Section</h1>
-          <p className="mt-4 text-lg">Learn more about me</p>
+          <p className="mt-4  text-center text-lg">
+            I am a recent graduate from Middle Georgia State University,
+            specializing in software engineering. My expertise encompasses the
+            development of CRUD web applications and creating virtual
+            experiences in Fortnite with BMW, utilizing game engines to deliver
+            immersive experiences for diverse consumer audiences. Additionally,
+            I have a profound understanding of AI and its strategic
+            implementation in business contexts.
+          </p>
         </div>
       </section>
 
@@ -29,10 +29,14 @@ function App() {
         </div>
       </section>
 
-      <section
-        id="contact"
-        className="pt-20 min-h-screen flex items-center bg-gray-50"
-      >
+      <section id="tech" className="pt-20 min-h-screen flex items-center">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold"> Tech Stacks</h1>
+          <p className="mt-4 text-lg">Tech Stacks</p>
+        </div>
+      </section>
+
+      <section id="contact" className="pt-20 min-h-screen flex items-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">Contact Section</h1>
           <p className="mt-4 text-lg">Get in touch with me!</p>
