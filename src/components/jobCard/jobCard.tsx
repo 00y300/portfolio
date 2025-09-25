@@ -4,7 +4,7 @@ interface JobCardProps {
   title: string;
   company: string;
   period: string;
-  description: string;
+  description: string[];
 }
 
 const JobCard: React.FC<JobCardProps> = ({
@@ -19,7 +19,13 @@ const JobCard: React.FC<JobCardProps> = ({
       <p className="text-gray-600 mt-2">
         {company} • {period}
       </p>
-      <p className="mt-4 text-gray-700">{description}</p>
+      <ul className="mt-4 list-disc pl-5 space-y-2 text-gray-700">
+        {description
+          .filter((line) => line.trim() !== "")
+          .map((line, i) => (
+            <li key={i}>{line}</li>
+          ))}
+      </ul>
     </div>
   );
 };

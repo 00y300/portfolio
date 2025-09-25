@@ -72,7 +72,7 @@
     {
       "label": "Terminate Node 󰎙",
       "type": "shell",
-      "command": "killall",
+      "command": "pkill",
       "args": [
         "node"
       ],
