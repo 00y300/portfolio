@@ -1,6 +1,7 @@
 import "./index.css";
 import NavigationBar from "./components/navigation/NavigationBar";
-import ExperienceSection from "./components/sections/experienceSection";
+import ExperienceSection from "./components/sections/experience/experienceSection";
+import TechStacksSection from "./components/sections/techStack/techStack";
 
 function App() {
   return (
@@ -23,12 +24,7 @@ function App() {
         </div>
       </section>
       <ExperienceSection />
-      <section id="tech" className="pt-20 min-h-screen flex items-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold"> Tech Stacks</h1>
-          <p className="mt-4 text-lg">Tech Stacks</p>
-        </div>
-      </section>
+      <TechStacksSection />
       <section id="contact" className="pt-20 min-h-screen flex items-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">Contact Section</h1>
