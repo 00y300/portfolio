@@ -18,6 +18,8 @@ const NavigationBar = () => {
           <NavItem href="#tech">Tech Stack</NavItem>
           <NavItem href="#contact">Contact</NavItem>
         </ul>
+
+        {/* Mobile menu */}
         <button className="md:hidden focus:outline-none" onClick={toggleMenu}>
           <svg
             className="w-6 h-6"
@@ -37,12 +39,20 @@ const NavigationBar = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <ul className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg space-y-2 py-4">
-            <NavItem href="#home">Home</NavItem>
-            <NavItem href="#experience">Experience</NavItem>
-            <NavItem href="#tech">Tech Stack</NavItem>
-            <NavItem href="#contact">Contact</NavItem>
-          </ul>
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg space-y-2 py-4 z-50">
+            <NavItem href="#home" onClick={toggleMenu}>
+              Home
+            </NavItem>
+            <NavItem href="#experience" onClick={toggleMenu}>
+              Experience
+            </NavItem>
+            <NavItem href="#tech" onClick={toggleMenu}>
+              Tech Stack
+            </NavItem>
+            <NavItem href="#contact" onClick={toggleMenu}>
+              Contact
+            </NavItem>
+          </div>
         )}
       </div>
     </nav>

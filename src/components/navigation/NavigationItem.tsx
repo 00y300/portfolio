@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 interface NavItemProps {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const NavItem = ({ href, children }: NavItemProps) => {
+const NavItem = ({ href, children, onClick }: NavItemProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,8 +19,10 @@ const NavItem = ({ href, children }: NavItemProps) => {
   }, []);
 
   const handleClick = (e: React.MouseEvent) => {
+    onClick?.();
     e.preventDefault();
-    const targetId = href.substring(1); // Remove the '#' from href
+
+    const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
