@@ -1,6 +1,5 @@
 import React from "react";
 
-// Define types for better type safety
 interface TechStackItem {
     icon: string;
     name: string;
@@ -8,7 +7,7 @@ interface TechStackItem {
 }
 
 const TechStacksSection: React.FC = () => {
-    // Move data to a separate file or constant for better organization
+    // TODO: Move data to a separate file or constant for better organization
     const techStacks: TechStackItem[] = [
         { icon: "devicon-react-original", name: "React", category: "Frontend" },
         { icon: "devicon-nextjs-plain", name: "Next.js", category: "Frontend" },
