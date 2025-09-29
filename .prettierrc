@@ -1,0 +1,34 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": false,
+  "singleQuote": true,
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.html",
+        "src/**/*.js"
+      ],
+      "options": {
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "semi": true,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "semi": true,
+        "singleQuote": false
+      }
+    }
+  ]
+}
