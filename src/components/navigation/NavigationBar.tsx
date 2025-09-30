@@ -1,4 +1,4 @@
-import NavItem from "./NavigationItem";
+import NavItem from "@components/navigation/NavigationItem";
 import { useState } from "react";
 
 const NavigationBar = () => {
@@ -15,6 +15,7 @@ const NavigationBar = () => {
                 <ul className="hidden space-x-8 md:flex">
                     <NavItem href="#home">Home</NavItem>
                     <NavItem href="#experience">Experience</NavItem>
+                    <NavItem href="#projects">Projects</NavItem>
                     <NavItem href="#tech">Tech Stack</NavItem>
                     <NavItem href="#contact">Contact</NavItem>
                 </ul>
@@ -57,6 +58,15 @@ const NavigationBar = () => {
                         >
                             Experience
                         </NavItem>
+
+                        <NavItem
+                            href="#projects"
+                            onClick={toggleMenu}
+                            isMobile={true}
+                        >
+                            Projects
+                        </NavItem>
+
                         <NavItem
                             href="#tech"
                             onClick={toggleMenu}
