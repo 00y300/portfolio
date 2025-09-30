@@ -27,7 +27,7 @@ const JobCard: React.FC<JobCardProps> = ({
                     className="h-auto max-h-24 w-auto max-w-xs object-contain pl-5 md:max-w-md lg:max-w-3xl"
                 />
             </div>
-            <p className="mt-2 text-gray-600">
+            <p className="text-gray-600">
                 {company} • {period}
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-700">
