@@ -10,11 +10,11 @@ function App() {
             <NavigationBar />
             <section id="home" className="flex min-h-screen items-center pt-20">
                 <div className="container mx-auto rounded-3xl bg-gray-300 px-4">
-                    <h1 className="font-adelphe pt-3.5 text-center text-4xl font-bold">
+                    <h1 className="pt-3.5 text-center text-4xl font-bold">
                         Hi, I'm Jerry.
                     </h1>
 
-                    <h2 className="font-adelphe mt-4 text-center text-2xl font-semibold">
+                    <h2 className="text-center text-2xl font-semibold">
                         Engineer & Developer
                     </h2>
 

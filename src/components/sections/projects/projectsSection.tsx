@@ -13,38 +13,60 @@ interface Project {
     title: string;
     description: string;
     techStack: TechStackItem[];
+    link?: string;
 }
 
 function ProjectsSection() {
-    // Define project data with tech stacks
     const projects: Project[] = [
         {
-            // TODO: Will Change to something more meaningful for now it will stay like this
+            // TODO:Change the image to something more meaningful.
             id: 1,
             src: BMW,
-            alt: "BMW Logo",
-            title: "BMW Project",
-            description: "A project involving BMW and game engine development",
+            alt: "Snapchat of Nexus Local Project",
+            title: "Nexus Local",
+            description:
+                "Senior Capstone Project: A project that allows local shops to have digital stores.",
             techStack: [
+                {
+                    icon: "devicon-nodejs-plain colored",
+                    name: "Node.js",
+                },
                 { icon: "devicon-react-original colored", name: "React" },
                 { icon: "devicon-nextjs-plain", name: "Next.js" },
                 {
                     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
                     name: "Vite",
                 },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+                    name: "Golang",
+                },
+
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg",
+                    name: "MySQL",
+                },
+                {
+                    icon: "devicon-tailwindcss-plain colored",
+                    name: "Tailwind CSS",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oauth/oauth-original.svg",
+                    name: "OAuth 2.0",
+                },
             ],
+            link: "https://github.com/00y300/Nexus_Local",
         },
     ];
-
     return (
         <section id="projects" className="flex min-h-screen items-center">
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold">Projects</h1>
                 <p className="mt-4 text-lg">
-                    Projects I have done in free time
+                    Projects I have done in my free time
                 </p>
                 {/* Render ImageCards for projects */}
-                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 justify-items-center gap-6 sm:justify-items-center md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project) => (
                         <ImageCard
                             key={project.id}
@@ -53,6 +75,7 @@ function ProjectsSection() {
                             title={project.title}
                             description={project.description}
                             techStack={project.techStack}
+                            link={project.link}
                         />
                     ))}
                 </div>
