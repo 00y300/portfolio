@@ -3,6 +3,7 @@ import NavigationBar from "@components/navigation/NavigationBar";
 import ExperienceSection from "@components/sections/experience/experienceSection";
 import TechStacksSection from "@components/sections/techStack/techStack";
 import ProjectsSection from "@components/sections/projects/projectsSection";
+import ContactSection from "@components/sections/contact/contactSection";
 
 function App() {
     return (
@@ -33,12 +34,7 @@ function App() {
             <ExperienceSection />
             <ProjectsSection />
             <TechStacksSection />
-            <section id="contact" className="flex min-h-screen items-center">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl font-bold">Contact Section</h1>
-                    <p className="mt-4 text-lg">Get in touch with me!</p>
-                </div>
-            </section>
+            <ContactSection />
         </>
     );
 }
