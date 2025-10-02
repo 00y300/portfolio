@@ -32,8 +32,14 @@ const TechStacksSection: React.FC = () => {
             name: "Python",
             category: "Backend",
         },
+
         {
-            icon: "devicon-mysql-plain-wordmark",
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oauth/oauth-original.svg",
+            name: "OAuth 2.0",
+            category: "Security",
+        },
+        {
+            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg",
             name: "MySQL",
             category: "Database",
         },

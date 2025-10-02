@@ -11,6 +11,7 @@ interface ImageCardProps {
     title: string;
     description: string;
     techStack?: TechStackItem[];
+    link?: string;
 }
 
 const ImageCard: React.FC<ImageCardProps> = ({
@@ -19,9 +20,13 @@ const ImageCard: React.FC<ImageCardProps> = ({
     title,
     description,
     techStack = [],
+    link,
 }) => {
     return (
-        <div className="max-w-sm overflow-hidden rounded bg-white shadow-lg transition-transform duration-300 hover:scale-105">
+        <div
+            className="max-w-md cursor-pointer overflow-hidden rounded bg-white shadow-lg transition-transform duration-300 hover:scale-105"
+            onClick={link ? () => window.open(link, "_blank") : undefined}
+        >
             <img className="h-48 w-full object-cover" src={src} alt={alt} />
             <div className="px-6 py-4">
                 <h3 className="mb-2 text-xl font-bold">{title}</h3>
@@ -29,7 +34,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
 
                 {/* Display tech stack icons */}
                 {techStack.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-2">
+                    <div className="mt-4 flex flex-wrap justify-center gap-2">
                         {techStack.map((tech, index) => (
                             <div
                                 key={index}
