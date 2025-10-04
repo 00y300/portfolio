@@ -1,5 +1,6 @@
 import NavItem from "@components/navigation/NavigationItem";
 import { useState } from "react";
+import logo from "@assets/logos/lightDog.png";
 
 const NavigationBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,8 +11,14 @@ const NavigationBar = () => {
 
     return (
         <nav className="fixed top-0 right-0 left-0 z-50 bg-white shadow-md">
-            <div className="container mx-auto flex items-center justify-between py-4">
-                <li className="flex">Jerry's Logo</li>
+            <div className="container mx-auto flex items-center justify-between px-4 py-4">
+                <div className="flex items-center">
+                    <img
+                        src={logo}
+                        alt="Jerry's Logo"
+                        className="h-10 w-10 rounded-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                </div>
                 <ul className="hidden space-x-8 md:flex">
                     <NavItem href="#home">Home</NavItem>
                     <NavItem href="#experience">Experience</NavItem>
@@ -20,10 +27,11 @@ const NavigationBar = () => {
                     <NavItem href="#contact">Contact</NavItem>
                 </ul>
 
-                {/* Mobile menu */}
+                {/* Mobile menu button */}
                 <button
-                    className="sm: pr-2.5 focus:outline-none md:hidden"
+                    className="rounded-lg p-2 pr-2.5 transition-colors duration-200 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden"
                     onClick={toggleMenu}
+                    aria-label="Toggle menu"
                 >
                     <svg
                         className="h-6 w-6"

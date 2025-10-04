@@ -4,13 +4,15 @@ import ExperienceSection from "@components/sections/experience/experienceSection
 import TechStacksSection from "@components/sections/techStack/techStack";
 import ProjectsSection from "@components/sections/projects/projectsSection";
 import ContactSection from "@components/sections/contact/contactSection";
+import logo from "@assets/logos/lightDog.png";
 
 function App() {
     return (
         <>
             <NavigationBar />
             <section id="home" className="flex min-h-screen items-center pt-20">
-                <div className="container mx-auto rounded-3xl bg-gray-300 px-4">
+                <div className="container mx-auto max-w-5xl rounded-3xl bg-gray-300 px-8 py-8 md:px-16">
+                    <img src={logo} alt="Logo" className="mx-auto h-32 w-32" />
                     <h1 className="pt-3.5 text-center text-4xl font-bold">
                         Hi, I'm Jerry.
                     </h1>
