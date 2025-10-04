@@ -7,6 +7,8 @@ const ContactSection: React.FC = () => {
         email: "",
         message: "",
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState("");
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -15,11 +17,40 @@ const ContactSection: React.FC = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitMessage("");
 
-        // Handle form submission here
-        console.log("Form submitted:", formData);
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setSubmitMessage("Message sent successfully!");
+                // Reset form
+                setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    message: "",
+                });
+            } else {
+                setSubmitMessage(`Error: ${result.message}`);
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setSubmitMessage("An error occurred while sending your message.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -103,10 +134,19 @@ const ContactSection: React.FC = () => {
 
                     <button
                         type="submit"
-                        className="rounded bg-black px-4 py-2 text-white hover:bg-gray-300 hover:text-black"
+                        disabled={isSubmitting}
+                        className="rounded bg-black px-4 py-2 text-white hover:bg-gray-300 hover:text-black disabled:opacity-50"
                     >
-                        Send Message
+                        {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
+
+                    {submitMessage && (
+                        <p
+                            className={`mt-4 ${submitMessage.includes("successfully") ? "text-green-500" : "text-red-500"}`}
+                        >
+                            {submitMessage}
+                        </p>
+                    )}
                 </form>
             </div>
         </section>
