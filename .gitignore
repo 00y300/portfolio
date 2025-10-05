@@ -18,8 +18,8 @@ dist-ssr
 .env.*.local
 
 # Cloudflare files
-.wrangler.toml
-.cloudflare/
+.wrangler
+.dev.vars*
 
 # Editor directories and files
 !.vscode/extensions.json
