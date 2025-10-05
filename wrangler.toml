@@ -1,0 +1,16 @@
+name = "portfolio"
+main = "src/index.ts"
+compatibility_date = "2025-10-01"
+
+[assets]
+directory = "src/"
+not_found_handling = "single-page-application"
+
+[env.dev]
+workers_dev = true
+route = "staging.example.com/*"
+
+[env.production]
+workers_dev = false
+route = "jncodes.pro/api/contact"
+

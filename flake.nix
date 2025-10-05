@@ -33,10 +33,14 @@
             nodePackages.prettier
             typescript-language-server
             typescript
+            cacert
           ];
 
           shellHook = ''
             export PATH="$PWD/node_modules/.bin:$PATH"
+            export NODE_EXTRA_CA_CERTS=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
+            export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
+            export SSL_CERT_DIR=${pkgs.cacert}/etc/ssl/certs
           '';
         };
       }
