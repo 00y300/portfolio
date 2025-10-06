@@ -12,5 +12,7 @@ route = "staging.example.com/*"
 
 [env.production]
 workers_dev = false
-route = "jncodes.pro/api/contact"
-
+route = "jncodes.pro/*"
+pages_build_output_dir = "dist/client"
+account_id = "782fcc0bba1e9f71c8d3d6a90bf6d95c"
+zone_id = "ec8cc3a762b32364d2ed8436571bd16a"
