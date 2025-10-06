@@ -1,3 +1,5 @@
+// @ts-ignore
+import React from "react";
 import {
     Body,
     Container,
@@ -40,7 +42,10 @@ export const ThankYouEmail = ({
                             <Row className="p-5 pb-0">
                                 <Column>
                                     <Heading className="font-adelphe text-center text-3xl font-bold">
-                                        Hi {userFirstName},
+                                        Hi{" "}
+                                        {userFirstName.charAt(0).toUpperCase() +
+                                            userFirstName.slice(1)}
+                                        ,
                                     </Heading>
                                     <Text className="font-adelphe mt-4 text-base">
                                         Thank you for reaching out! I've

@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import ThankYouEmail from "../../src/assets/email/MyEmail";
+import ThankYouEmail from "../../src/assets/email/thankYouEmail";
 
 interface ContactFormData {
     firstName: string;
@@ -47,7 +47,7 @@ export async function onRequestPost(context: {
 
         // Send notification email to admin
         const adminEmail = await resend.emails.send({
-            from: "adminMail@jncodespro",
+            from: "adminMail@jncodes.pro",
             to: env.ADMIN_EMAIL,
             subject: `Contact Form Submission from ${firstName} ${lastName}`,
             text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nMessage: ${message}`,
@@ -58,14 +58,13 @@ export async function onRequestPost(context: {
         });
 
         // Send thank you email to user using React Email template
-        // Pass the EMAIL_IMAGE_URL from env to the template
         const thankYouEmail = await resend.emails.send({
             from: "DoNotReply@jncodes.pro",
             to: email,
             subject: "Thanks for reaching out!",
             react: ThankYouEmail({
                 userFirstName: firstName,
-                imageUrl: env.EMAIL_IMAGE_URL,
+                imageUrl: "https://jncodes.pro/email/lightDog.png",
             }),
         });
 
