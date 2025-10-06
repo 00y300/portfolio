@@ -13,7 +13,7 @@
     "dev:all:wrangler": "concurrently \"npm run dev:wrangler\" \"npm run dev\"",
     "email:dev": "email dev --dir src/assets",
     "email:build": "email build --dir src/assets",
-    "deploy:wrangler": "wrangler deploy --env prod"
+    "deploy:wrangler": "wrangler deploy --env production"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
