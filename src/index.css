@@ -5,9 +5,8 @@
 @font-face {
     font-family: 'Adelphe Floreal';
     src:
-        url('/assets/fonts/adelphe/Adelphe-FlorealRegular.woff2')
-            format('woff2'),
-        url('/assets/fonts/adelphe/Adelphe-FlorealRegular.woff') format('woff');
+        url('/fonts/adelphe/Adelphe-FlorealRegular.woff2') format('woff2'),
+        url('/fonts/adelphe/Adelphe-FlorealRegular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -15,8 +14,8 @@
 @font-face {
     font-family: 'Adelphe Floreal';
     src:
-        url('/assets/fonts/adelphe/Adelphe-FlorealItalic.woff2') format('woff2'),
-        url('/assets/fonts/adelphe/Adelphe-FlorealItalic.woff') format('woff');
+        url('/fonts/adelphe/Adelphe-FlorealItalic.woff2') format('woff2'),
+        url('/fonts/adelphe/Adelphe-FlorealItalic.woff') format('woff');
     font-weight: 400;
     font-style: italic;
 }
@@ -24,9 +23,8 @@
 @font-face {
     font-family: 'Adelphe Floreal';
     src:
-        url('/assets/fonts/adelphe/Adelphe-FlorealSemiBold.woff2')
-            format('woff2'),
-        url('/assets/fonts/adelphe/Adelphe-FlorealSemiBold.woff') format('woff');
+        url('/fonts/adelphe/Adelphe-FlorealSemiBold.woff2') format('woff2'),
+        url('/fonts/adelphe/Adelphe-FlorealSemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -34,10 +32,9 @@
 @font-face {
     font-family: 'Adelphe Floreal';
     src:
-        url('/assets/fonts/adelphe/Adelphe-FlorealSemiBoldItalic.woff2')
+        url('/fonts/adelphe/Adelphe-FlorealSemiBoldItalic.woff2')
             format('woff2'),
-        url('/assets/fonts/adelphe/Adelphe-FlorealSemiBoldItalic.woff')
-            format('woff');
+        url('/fonts/adelphe/Adelphe-FlorealSemiBoldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
 }
@@ -45,8 +42,8 @@
 @font-face {
     font-family: 'Adelphe Floreal';
     src:
-        url('/assets/fonts/adelphe/Adelphe-FlorealBold.woff2') format('woff2'),
-        url('/assets/fonts/adelphe/Adelphe-FlorealBold.woff') format('woff');
+        url('/fonts/adelphe/Adelphe-FlorealBold.woff2') format('woff2'),
+        url('/fonts/adelphe/Adelphe-FlorealBold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
@@ -54,10 +51,8 @@
 @font-face {
     font-family: 'Adelphe Floreal';
     src:
-        url('/assets/fonts/adelphe/Adelphe-FlorealBoldItalic.woff2')
-            format('woff2'),
-        url('/assets/fonts/adelphe/Adelphe-FlorealBoldItalic.woff')
-            format('woff');
+        url('/fonts/adelphe/Adelphe-FlorealBoldItalic.woff2') format('woff2'),
+        url('/fonts/adelphe/Adelphe-FlorealBoldItalic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
 }
