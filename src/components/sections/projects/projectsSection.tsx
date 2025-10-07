@@ -1,5 +1,5 @@
 import ImageCard from "@components/imageCard/imageCardTechStack";
-import BMW from "@assets/logos/BMW.svg";
+import BMW from "/logos/BMW.svg";
 
 interface TechStackItem {
     icon: string;

@@ -1,4 +1,4 @@
-import BMW from "@assets/logos/BMW.svg";
+import BMW from "/logos/BMW.svg";
 
 export const jobsData = [
     {

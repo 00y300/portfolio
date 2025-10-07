@@ -28,5 +28,5 @@
       "@components/*": ["src/components/*"]
     }
   },
-  "include": ["src", "functions"]
+  "include": ["src", "functions", "public/logos/darkDog.png", "public/logos/lightDog.png", "public/logos/faviconDark.ico", "public/logos/BMW.svg", "public/logos/favicon.ico"]
 }

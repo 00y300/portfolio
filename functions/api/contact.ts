@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import ThankYouEmail from "../../src/assets/email/thankYouEmail";
+import ThankYouEmail from "@assets/email/thankYouEmail";
 
 interface ContactFormData {
     firstName: string;
@@ -64,7 +64,10 @@ export async function onRequestPost(context: {
             subject: "Thanks for reaching out!",
             react: ThankYouEmail({
                 userFirstName: firstName,
-                imageUrl: "https://jncodes.pro/email/lightDog.png",
+                imageUrl: env.RESOURCE_URL + "/logos/lightDog.png",
+                fontUrl:
+                    env.RESOURCE_URL +
+                    "/fonts/adelphe/Adelphe-FlorealRegular.woff",
             }),
         });
 

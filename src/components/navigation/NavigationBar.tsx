@@ -1,6 +1,6 @@
 import NavItem from "@components/navigation/NavigationItem";
 import { useState } from "react";
-import logo from "@assets/logos/lightDog.png";
+import logo from "/logos/lightDog.png";
 
 const NavigationBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

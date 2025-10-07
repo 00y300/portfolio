@@ -10,23 +10,34 @@ import {
     Preview,
     Section,
     Text,
-    Row,
-    Column,
     Tailwind,
 } from "@react-email/components";
 
 interface ThankYouEmailProps {
     userFirstName?: string;
     imageUrl?: string;
+    fontUrl?: string;
 }
 
 export const ThankYouEmail = ({
     userFirstName = "there",
-    imageUrl = "",
+    imageUrl,
+    fontUrl,
 }: ThankYouEmailProps) => {
     return (
         <Html>
-            <Head />
+            <Head>
+                <style>{`
+                    @font-face {
+                        font-family: 'Adelphe';
+                        src: url('${fontUrl}') format('woff');
+                        font-display: swap;
+                    }
+                    .font-adelphe {
+                        font-family: 'Adelphe', sans-serif !important;
+                    }
+                `}</style>
+            </Head>
             <Tailwind>
                 <Body className="bg-white font-sans">
                     <Preview>Thank you for contacting us</Preview>
@@ -37,27 +48,22 @@ export const ThankYouEmail = ({
                                 alt="Logo"
                                 className="mx-auto h-24 w-24"
                             />
-                        </Section>
-                        <Section className="pt-0">
-                            <Row className="p-5 pb-0">
-                                <Column>
-                                    <Heading className="font-adelphe text-center text-3xl font-bold">
-                                        Hi{" "}
-                                        {userFirstName.charAt(0).toUpperCase() +
-                                            userFirstName.slice(1)}
-                                        ,
-                                    </Heading>
-                                    <Text className="font-adelphe mt-4 text-base">
-                                        Thank you for reaching out! I've
-                                        received your message and will get back
-                                        to you as soon as possible.
-                                    </Text>
-                                </Column>
-                            </Row>
+                            <Heading className="font-adelphe mt-4 text-center text-3xl font-bold">
+                                Hi{" "}
+                                {userFirstName.charAt(0).toUpperCase() +
+                                    userFirstName.slice(1)}
+                                ,
+                            </Heading>
+                            <Text className="font-adelphe mt-4 text-base">
+                                Thank you for reaching out! I've received your
+                                message and will get back to you as soon as
+                                possible. I look forward to connecting with you
+                                soon
+                            </Text>
                         </Section>
                         <Section className="bg-gray-50 px-6 py-6">
                             <Text className="font-adelphe m-0 text-center text-xs leading-relaxed text-gray-600">
-                                © 2025 | www.jncodes.pro
+                                © 2025 | https://jncodes.pro
                             </Text>
                         </Section>
                     </Container>
@@ -66,10 +72,5 @@ export const ThankYouEmail = ({
         </Html>
     );
 };
-
-ThankYouEmail.PreviewProps = {
-    userFirstName: "Jerry",
-    imageUrl: "http://localhost:5173/src/assets/email/lightDog.png",
-} as ThankYouEmailProps;
 
 export default ThankYouEmail;

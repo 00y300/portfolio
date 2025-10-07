@@ -4,7 +4,7 @@ import ExperienceSection from "@components/sections/experience/experienceSection
 import TechStacksSection from "@components/sections/techStack/techStack";
 import ProjectsSection from "@components/sections/projects/projectsSection";
 import ContactSection from "@components/sections/contact/contactSection";
-import logo from "@assets/logos/lightDog.png";
+import logo from "/logos/lightDog.png";
 
 function App() {
     return (
