@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- Responsive design
+- Modern UI components
+- Email sending capability using Resend: [Resend documentation](https://resend.com/docs/introduction) ✉️
+- Deployment via [Cloudflare Wrangler](https://developers.cloudflare.com/workers/wrangler/) and [Cloudflare Workers](https://workers.cloudflare.com/). 🌥️🔥
 
-Currently, two official plugins are available:
+### Project Structure and Tools
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**React 19 Setup**
+- React 19.1.1 with React DOM 19.1.1
+- Vite for fast development server
+- TypeScript support via `@types/react` and `@types/react-dom`
 
-## Expanding the ESLint configuration
+**Tailwind CSS Integration**
+- Tailwind CSS v4.1.1 with `@tailwindcss/vite` plugin
+- Prettier integration using `prettier-plugin-tailwindcss`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Email Templates**
+- Built with `react-email` and `@react-email/components`
+- Scripts: `email:dev` and `email:build` for React Email CLI
+- Rendering with `@react-email/render`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Cloudflare Workers Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Wrangler scripts included:
+```json
+"dev:wrangler": "wrangler dev --env dev",
+"dev:all:wrangler": "concurrently \"npm run dev:wrangler\" \"npm run dev\"",
+"deploy:wrangler": "wrangler deploy --env production"
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> **Note:** API keys must be defined in environment variables.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Indicates plans to deploy serverless functions on Cloudflare Workers, for API endpoints or SSR.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Concurrent Development
+
+```json
+"dev:all": "concurrently \"npm run dev\" \"npm run email:dev\""
 ```

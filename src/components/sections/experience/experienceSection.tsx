@@ -6,8 +6,6 @@ const ExperienceSection = () => {
         <section id="experience" className="flex min-h-screen items-center">
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold">Experience Section</h1>
-                {/* <p className="mt-4 text-lg">Professional Experience</p> */}
-
                 <div className="mt-8">
                     {jobsData.map((job, index) => (
                         <JobCard

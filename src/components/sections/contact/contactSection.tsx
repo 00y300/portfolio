@@ -35,7 +35,6 @@ const ContactSection: React.FC = () => {
 
             if (response.ok) {
                 setSubmitMessage("Message sent successfully!");
-                // Reset form
                 setFormData({
                     firstName: "",
                     lastName: "",
@@ -54,100 +53,116 @@ const ContactSection: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="flex min-h-screen items-center">
+        <section id="contact" className="flex min-h-screen items-center py-20">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold">Contact Section</h1>
-                <p className="mt-4 text-lg">Get in touch with me!</p>
+                <div className="mx-auto max-w-2xl">
+                    <h1 className="mb-2 text-center text-4xl font-bold">
+                        Get In Touch
+                    </h1>
+                    <p className="mb-12 text-center text-lg opacity-80">
+                        Have a question or want to work together? Drop me a
+                        message!
+                    </p>
 
-                <form onSubmit={handleSubmit} className="mt-8 max-w-lg">
-                    <div className="mb-4">
-                        <label
-                            htmlFor="firstName"
-                            className="block text-lg font-medium"
-                        >
-                            First Name
-                        </label>
-                        <input
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            value={formData.firstName}
-                            onChange={handleChange}
-                            className="mt-1 w-full rounded border px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label
-                            htmlFor="lastName"
-                            className="block text-lg font-medium"
-                        >
-                            Last Name
-                        </label>
-                        <input
-                            type="text"
-                            id="lastName"
-                            name="lastName"
-                            value={formData.lastName}
-                            onChange={handleChange}
-                            className="mt-1 w-full rounded border px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label
-                            htmlFor="email"
-                            className="block text-lg font-medium"
-                        >
-                            Email
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="mt-1 w-full rounded border px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label
-                            htmlFor="message"
-                            className="block text-lg font-medium"
-                        >
-                            Message
-                        </label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            rows={4}
-                            className="mt-1 w-full rounded border px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
-                            required
-                        />
-                    </div>
-
-                    <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="rounded bg-black px-4 py-2 text-white hover:bg-gray-300 hover:text-black disabled:opacity-50"
+                    <form
+                        onSubmit={handleSubmit}
+                        className="card rounded-lg p-8 shadow-lg"
                     >
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
+                        <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                            <div>
+                                <label
+                                    htmlFor="firstName"
+                                    className="mb-2 block font-medium"
+                                >
+                                    First Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                    className="border-accent focus:border-opacity-60 focus:ring-opacity-20 w-full rounded-lg border bg-transparent px-4 py-3 transition-all focus:ring-2 focus:outline-none"
+                                    required
+                                />
+                            </div>
 
-                    {submitMessage && (
-                        <p
-                            className={`mt-4 ${submitMessage.includes("successfully") ? "text-green-500" : "text-red-500"}`}
+                            <div>
+                                <label
+                                    htmlFor="lastName"
+                                    className="mb-2 block font-medium"
+                                >
+                                    Last Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                    className="border-accent focus:border-opacity-60 focus:ring-opacity-20 w-full rounded-lg border bg-transparent px-4 py-3 transition-all focus:ring-2 focus:outline-none"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div className="mb-6">
+                            <label
+                                htmlFor="email"
+                                className="mb-2 block font-medium"
+                            >
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="border-accent focus:border-opacity-60 focus:ring-opacity-20 w-full rounded-lg border bg-transparent px-4 py-3 transition-all focus:ring-2 focus:outline-none"
+                                required
+                            />
+                        </div>
+
+                        <div className="mb-6">
+                            <label
+                                htmlFor="message"
+                                className="mb-2 block font-medium"
+                            >
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows={5}
+                                className="border-accent focus:border-opacity-60 focus:ring-opacity-20 w-full rounded-lg border bg-transparent px-4 py-3 transition-all focus:ring-2 focus:outline-none"
+                                required
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 px-6 py-3 font-semibold text-white shadow-md transition-all hover:from-amber-700 hover:to-orange-700 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                            {submitMessage}
-                        </p>
-                    )}
-                </form>
+                            {isSubmitting ? "Sending..." : "Send Message"}
+                        </button>
+
+                        {submitMessage && (
+                            <div
+                                className={`mt-4 rounded-lg p-4 text-center font-medium ${
+                                    submitMessage.includes("successfully")
+                                        ? "dark:bg-opacity-30 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+                                        : "dark:bg-opacity-30 bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
+                                }`}
+                            >
+                                {submitMessage}
+                            </div>
+                        )}
+                    </form>
+                </div>
             </div>
         </section>
     );

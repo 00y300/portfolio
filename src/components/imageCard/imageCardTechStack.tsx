@@ -24,21 +24,24 @@ const ImageCard: React.FC<ImageCardProps> = ({
 }) => {
     return (
         <div
-            className="max-w-md cursor-pointer overflow-hidden rounded bg-white shadow-lg transition-transform duration-300 hover:scale-105"
+            className="card max-w-md transform-gpu cursor-pointer overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-out hover:shadow-xl"
             onClick={link ? () => window.open(link, "_blank") : undefined}
         >
-            <img className="h-48 w-full object-cover" src={src} alt={alt} />
+            <img
+                className="h-48 w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                src={src}
+                alt={alt}
+            />
             <div className="px-6 py-4">
                 <h3 className="mb-2 text-xl font-bold">{title}</h3>
-                <p className="text-base text-gray-700">{description}</p>
+                <p className="text-base opacity-80">{description}</p>
 
-                {/* Display tech stack icons */}
                 {techStack.length > 0 && (
                     <div className="mt-4 flex flex-wrap justify-center gap-2">
                         {techStack.map((tech, index) => (
                             <div
                                 key={index}
-                                className="flex items-center justify-center rounded-full bg-gray-200 p-2"
+                                className="flex items-center justify-center rounded-full bg-gray-200 p-2 dark:bg-gray-700"
                             >
                                 {tech.icon.startsWith("http") ? (
                                     <img

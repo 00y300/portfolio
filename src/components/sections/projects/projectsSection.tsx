@@ -1,5 +1,6 @@
 import ImageCard from "@components/imageCard/imageCardTechStack";
-import BMW from "/logos/BMW.svg";
+import Nexus_Local from "/images/Nexus_Local.jpg";
+import portfolio from "/images/portFolioWebsite.png";
 
 interface TechStackItem {
     icon: string;
@@ -19,10 +20,41 @@ interface Project {
 function ProjectsSection() {
     const projects: Project[] = [
         {
-            // TODO:Change the image to something more meaningful.
             id: 1,
-            src: BMW,
-            alt: "Snapchat of Nexus Local Project",
+            src: portfolio,
+            alt: "Snapshot of Portfolio Project",
+            title: "JNCodes Portfolio",
+            description:
+                "Portfolio website for myself hosted on Cloudflare. Prioritizing and UX/UI experience of the end user.",
+
+            techStack: [
+                {
+                    icon: "devicon-nodejs-plain colored",
+                    name: "Node.js",
+                },
+                {
+                    icon: "devicon-tailwindcss-plain colored",
+                    name: "Tailwind CSS",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
+                    name: "Vite",
+                },
+                {
+                    icon: "devicon-react-original colored",
+                    name: "React",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg",
+                    name: "Cloudflare",
+                },
+            ],
+            link: "https://github.com/00y300/portfolio",
+        },
+        {
+            id: 2,
+            src: Nexus_Local,
+            alt: "Snapshot of Nexus Local Project",
             title: "Nexus Local",
             description:
                 "Senior Capstone Project: A project that allows local shops to have digital stores.",
@@ -66,7 +98,7 @@ function ProjectsSection() {
                     Projects I have done in my free time
                 </p>
                 {/* Render ImageCards for projects */}
-                <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 justify-items-center gap-6 sm:justify-items-center md:grid-cols-2 lg:grid-cols-3">
+                <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 justify-items-center gap-6 sm:justify-items-center md:grid-cols-2 lg:flex lg:justify-center">
                     {projects.map((project) => (
                         <ImageCard
                             key={project.id}
