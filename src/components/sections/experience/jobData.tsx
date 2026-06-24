@@ -17,7 +17,7 @@ export const jobsData: Job[] = [
         company: "Prisma Health",
         period: "Feb 2026 – Present",
         description: [
-            "Built UiPath RPA workflows to automate healthcare operations — patient intake, scheduling, and billing — cutting manual data entry by 60% and accelerating cycle times across departments.",
+            "Built UiPath RPA workflows to automate healthcare operations, including patient intake, scheduling, and billing, cutting manual data entry by 60% and accelerating cycle times across departments.",
             "Engineered automated data migration pipelines between clinical and administrative systems in UiPath Orchestrator, enforcing data integrity with validation rules and exception-handling, backed by SQLite for lightweight local persistence and runtime logging.",
         ],
         imagesrc: Prisma,
@@ -29,7 +29,7 @@ export const jobsData: Job[] = [
         period: "Apr 2025 – Jan 2026",
         description: [
             "Developed a C# .NET Core RFID tracking system with Impinj R700 readers to automate package handling, capturing real-time EPC tag values to uniquely identify 10,000+ assets daily at sub-second latency.",
-            "Designed the backend to persist and validate records in MS SQL Server, filtering duplicates at scale — saving the company $100,000 in development costs through streamlined automation.",
+            "Designed the backend to persist and validate records in MS SQL Server, filtering duplicates at scale and saving the company $100,000 in development costs through streamlined automation.",
             "Maintained an Inductive Automation Ignition SCADA system, tuning gateway performance and tag histories for long-term analytics.",
             "Wrote Visual Basic macros in Excel to automate tactical scheduling, helping manufacturing plants plan job-processing workflows and improve throughput.",
         ],
