@@ -20,6 +20,68 @@ interface Project {
 function ProjectsSection() {
     const projects: Project[] = [
         {
+            id: 4,
+            src: "https://www.svgrepo.com/show/373541/cuda.svg",
+            alt: "CUDA Learning kernel optimization projects",
+            title: "CUDA Learning",
+            description:
+                "A collection of CUDA projects exploring GPU kernel optimization patterns from Programming Massively Parallel Processors (Hwu, Kirk, El Hajj): tiled convolution, 3D stencils, parallel reduction, prefix sum, and tiled GEMM. Built with CMake and a reproducible Nix flake dev environment (nvcc, clangd), tested on an RTX 5090 (Blackwell, sm_120) with CUDA Toolkit 13.",
+            techStack: [
+                {
+                    icon: "https://www.svgrepo.com/show/373541/cuda.svg",
+                    name: "CUDA",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+                    name: "C++",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg",
+                    name: "CMake",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nixos/nixos-original.svg",
+                    name: "Nix Flakes",
+                },
+            ],
+            link: "https://github.com/00y300/CudaLearning",
+        },
+        {
+            id: 3,
+            src: portfolio,
+            alt: "Datacenter PUE Forecasting",
+            title: "Datacenter PUE Forecasting",
+            description:
+                "Built ML pipelines to forecast and classify Power Usage Effectiveness (PUE) for the NREL Energy Systems Integration Facility. Developed forecasting pipelines at 5min, 1hr, and 24hr horizons, plus a multiclass classification pipeline for efficiency tier detection and anomaly flagging. Applied walk-forward cross-validation to simulate monthly retraining.",
+            techStack: [
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+                    name: "Python",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
+                    name: "PyTorch",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+                    name: "NumPy",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg",
+                    name: "scikit-learn",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
+                    name: "SQLite",
+                },
+                {
+                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nixos/nixos-original.svg",
+                    name: "Nix Flakes",
+                },
+            ],
+            link: "https://github.com/00y300/datacenter-pue-forecasting",
+        },
+        {
             id: 1,
             src: portfolio,
             alt: "Snapshot of Portfolio Project",
@@ -92,68 +154,6 @@ function ProjectsSection() {
                 },
             ],
             link: "https://github.com/00y300/Nexus_Local",
-        },
-        {
-            id: 3,
-            src: portfolio,
-            alt: "Datacenter PUE Forecasting",
-            title: "Datacenter PUE Forecasting",
-            description:
-                "Built ML pipelines to forecast and classify Power Usage Effectiveness (PUE) for the NREL Energy Systems Integration Facility. Developed forecasting pipelines at 5min, 1hr, and 24hr horizons, plus a multiclass classification pipeline for efficiency tier detection and anomaly flagging. Applied walk-forward cross-validation to simulate monthly retraining.",
-            techStack: [
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-                    name: "Python",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
-                    name: "PyTorch",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
-                    name: "NumPy",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg",
-                    name: "scikit-learn",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
-                    name: "SQLite",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nixos/nixos-original.svg",
-                    name: "Nix Flakes",
-                },
-            ],
-            link: "https://github.com/00y300/datacenter-pue-forecasting",
-        },
-        {
-            id: 4,
-            src: "https://www.svgrepo.com/show/373541/cuda.svg",
-            alt: "CUDA Learning kernel optimization projects",
-            title: "CUDA Learning",
-            description:
-                "A collection of CUDA projects exploring GPU kernel optimization patterns from Programming Massively Parallel Processors (Hwu, Kirk, El Hajj): tiled convolution, 3D stencils, parallel reduction, prefix sum, and tiled GEMM. Built with CMake and a reproducible Nix flake dev environment (nvcc, clangd), tested on an RTX 5090 (Blackwell, sm_120) with CUDA Toolkit 13.",
-            techStack: [
-                {
-                    icon: "https://www.svgrepo.com/show/373541/cuda.svg",
-                    name: "CUDA",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
-                    name: "C++",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg",
-                    name: "CMake",
-                },
-                {
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nixos/nixos-original.svg",
-                    name: "Nix Flakes",
-                },
-            ],
-            link: "https://github.com/00y300/CudaLearning",
         },
     ];
 
