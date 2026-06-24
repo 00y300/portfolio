@@ -1,17 +1,4 @@
-// @ts-ignore
-import React from "react";
-import {
-    Body,
-    Container,
-    Head,
-    Heading,
-    Html,
-    Img,
-    Preview,
-    Section,
-    Text,
-    Tailwind,
-} from "@react-email/components";
+import "@react-email/render";
 
 interface ThankYouEmailProps {
     userFirstName?: string;
@@ -24,9 +11,13 @@ export const ThankYouEmail = ({
     imageUrl,
     fontUrl,
 }: ThankYouEmailProps) => {
+    const firstName =
+        userFirstName.charAt(0).toUpperCase() +
+        userFirstName.slice(1).toLowerCase();
+
     return (
-        <Html>
-            <Head>
+        <html>
+            <head>
                 <style>{`
                     @font-face {
                         font-family: 'Adelphe';
@@ -37,39 +28,93 @@ export const ThankYouEmail = ({
                         font-family: 'Adelphe', sans-serif !important;
                     }
                 `}</style>
-            </Head>
-            <Tailwind>
-                <Body className="bg-white font-sans">
-                    <Preview>Thank you for contacting us</Preview>
-                    <Container className="font-adelphe mx-auto max-w-xl overflow-hidden rounded-lg border border-gray-200">
-                        <Section className="bg-white p-6">
-                            <Img
-                                src={imageUrl}
-                                alt="Logo"
-                                className="mx-auto h-24 w-24"
-                            />
-                            <Heading className="font-adelphe mt-4 text-center text-3xl font-bold">
-                                Hi{" "}
-                                {userFirstName.charAt(0).toUpperCase() +
-                                    userFirstName.slice(1)}
-                                ,
-                            </Heading>
-                            <Text className="font-adelphe mt-4 text-base">
-                                Thank you for reaching out! I've received your
-                                message and will get back to you as soon as
-                                possible. I look forward to connecting with you
-                                soon
-                            </Text>
-                        </Section>
-                        <Section className="bg-gray-50 px-6 py-6">
-                            <Text className="font-adelphe m-0 text-center text-xs leading-relaxed text-gray-600">
-                                © 2025 | https://jncodes.pro
-                            </Text>
-                        </Section>
-                    </Container>
-                </Body>
-            </Tailwind>
-        </Html>
+            </head>
+            <body
+                style={{
+                    margin: 0,
+                    padding: 0,
+                    backgroundColor: "#ffffff",
+                    fontFamily: "Arial, Helvetica, sans-serif",
+                }}
+            >
+                <div
+                    style={{
+                        display: "none",
+                        overflow: "hidden",
+                        maxHeight: 0,
+                        maxWidth: 0,
+                        opacity: 0,
+                    }}
+                >
+                    Thank you for contacting us
+                </div>
+                <div
+                    style={{
+                        maxWidth: "24rem",
+                        margin: "0 auto",
+                        backgroundColor: "#ffffff",
+                        borderRadius: "0.5rem",
+                        border: "1px solid #e5e7eb",
+                        overflow: "hidden",
+                    }}
+                >
+                    <div style={{ padding: "1.5rem" }}>
+                        <img
+                            src={imageUrl}
+                            alt="Logo"
+                            style={{
+                                width: "6rem",
+                                height: "6rem",
+                                display: "block",
+                                margin: "0 auto",
+                            }}
+                        />
+                        <h1
+                            style={{
+                                fontFamily: "'Adelphe', sans-serif",
+                                margin: "1rem 0 0",
+                                fontSize: "1.875rem",
+                                fontWeight: "700",
+                                textAlign: "center",
+                            }}
+                        >
+                            Hi {firstName},
+                        </h1>
+                        <p
+                            style={{
+                                fontFamily: "'Adelphe', sans-serif",
+                                marginTop: "1rem",
+                                fontSize: "1rem",
+                                lineHeight: "1.5rem",
+                            }}
+                        >
+                            Thank you for reaching out! I've received your
+                            message and will get back to you as soon as
+                            possible. I look forward to connecting with you soon
+                        </p>
+                    </div>
+                    <div
+                        style={{
+                            padding: "1.5rem",
+                            marginTop: "1.5rem",
+                            backgroundColor: "#f9fafb",
+                        }}
+                    >
+                        <p
+                            style={{
+                                margin: 0,
+                                fontSize: "0.75rem",
+                                lineHeight: "1rem",
+                                color: "#4b5563",
+                                textAlign: "center",
+                            }}
+                        >
+                            © 2025 | https://jncodes.pro
+                        </p>
+                    </div>
+                </div>
+            </body>
+        </html>
     );
 };
 

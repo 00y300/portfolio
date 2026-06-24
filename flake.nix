@@ -29,8 +29,7 @@
             eslint_d
             vscode-js-debug
             vscode-extensions.firefox-devtools.vscode-firefox-debug
-            nodePackages.typescript
-            nodePackages.prettier
+            prettier
             typescript-language-server
             typescript
             cacert

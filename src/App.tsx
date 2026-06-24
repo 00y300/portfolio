@@ -11,17 +11,16 @@ import darkLogo from "/logos/darkDog.png";
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(
-        document.body.classList.contains("dark")
+        document.body.classList.contains("dark"),
     );
 
     useEffect(() => {
         const updateTheme = () => {
             const isDark = document.body.classList.contains("dark");
             setIsDarkMode(isDark);
-
             // Update favicon
             const favicon = document.querySelector(
-                "link[rel='icon']"
+                "link[rel='icon']",
             ) as HTMLLinkElement;
             if (favicon) {
                 favicon.href = isDark
@@ -29,17 +28,14 @@ function App() {
                     : "/logos/favicon.ico";
             }
         };
-
         // Initial update
         updateTheme();
-
         // Watch for theme changes
         const observer = new MutationObserver(updateTheme);
         observer.observe(document.body, {
             attributes: true,
             attributeFilter: ["class"],
         });
-
         return () => observer.disconnect();
     }, []);
 
@@ -56,21 +52,19 @@ function App() {
                         alt="Logo"
                         className="mx-auto h-32 w-32"
                     />
-                    <h1 className="pt-3.5 text-center text-4xl font-bold">
+                    <h1 className="pt-3.5 text-center text-4xl font-bold md:text-5xl">
                         Hi, I'm Jerry.
                     </h1>
-                    <h2 className="text-center text-2xl font-semibold">
-                        Engineer & Developer
+                    <h2 className="mt-2 text-center text-xl font-semibold opacity-80 md:text-2xl">
+                        Software Engineer · XR, Automation & AI
                     </h2>
-                    <p className="font-adelphe mx-auto mt-4 max-w-3xl text-center text-lg">
-                        I am a recent graduate from Middle Georgia State
-                        University, specializing in software engineering. My
-                        expertise encompasses the development of CRUD web
-                        applications and creating virtual experiences in
-                        Fortnite with BMW, utilizing game engines to deliver
-                        immersive experiences for diverse consumer audiences.
-                        Additionally, I have a profound understanding of AI and
-                        its strategic implementation in business contexts.
+                    <p className="font-adelphe mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-balance">
+                        I'm a software engineer who likes working across the
+                        whole stack. I've built immersive XR systems at BMW and
+                        now work on healthcare automation that runs in
+                        production. These days I'm pursuing my MS in CS (AI) at
+                        Georgia Tech, and exploring GPU compute and CUDA on the
+                        side.
                     </p>
                 </div>
             </section>
@@ -82,4 +76,5 @@ function App() {
         </>
     );
 }
+
 export default App;

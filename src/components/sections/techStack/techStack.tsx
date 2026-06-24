@@ -4,67 +4,220 @@ interface TechStackItem {
     icon: string;
     name: string;
     category: string;
+    /** Icons that are dark/monochrome and vanish on a dark background.
+     *  When true, they get inverted (and a slight brightness bump) in dark mode. */
+    invertOnDark?: boolean;
 }
 
+const CDN = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+
 const TechStacksSection: React.FC = () => {
-    // TODO: Move data to a separate file or constant for better organization
     const techStacks: TechStackItem[] = [
-        { icon: "devicon-react-original", name: "React", category: "Frontend" },
-        { icon: "devicon-nextjs-plain", name: "Next.js", category: "Frontend" },
+        // ---- Frontend ----
         {
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
+            icon: `${CDN}/react/react-original.svg`,
+            name: "React",
+            category: "Frontend",
+        },
+        {
+            icon: `${CDN}/nextjs/nextjs-original.svg`,
+            name: "Next.js",
+            category: "Frontend",
+            invertOnDark: true,
+        },
+        {
+            icon: `${CDN}/vitejs/vitejs-original.svg`,
             name: "Vite",
             category: "Frontend",
         },
         {
-            icon: "devicon-typescript-plain",
+            icon: `${CDN}/typescript/typescript-original.svg`,
             name: "TypeScript",
             category: "Frontend",
         },
         {
-            icon: "devicon-tailwindcss-plain",
+            icon: `${CDN}/javascript/javascript-original.svg`,
+            name: "JavaScript",
+            category: "Frontend",
+        },
+        {
+            icon: `${CDN}/tailwindcss/tailwindcss-original.svg`,
             name: "Tailwind CSS",
             category: "Frontend",
         },
-        { icon: "devicon-nodejs-plain", name: "Node.js", category: "Backend" },
         {
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+            icon: `${CDN}/html5/html5-original.svg`,
+            name: "HTML5",
+            category: "Frontend",
+        },
+        {
+            icon: `${CDN}/css3/css3-original.svg`,
+            name: "CSS3",
+            category: "Frontend",
+        },
+        {
+            icon: `${CDN}/threejs/threejs-original.svg`,
+            name: "Three.js",
+            category: "Frontend",
+            invertOnDark: true,
+        },
+
+        // ---- Backend ----
+        {
+            icon: `${CDN}/nodejs/nodejs-original.svg`,
+            name: "Node.js",
+            category: "Backend",
+        },
+        {
+            icon: `${CDN}/python/python-original.svg`,
             name: "Python",
+            category: "Backend",
+        },
+        { icon: `${CDN}/go/go-original.svg`, name: "Go", category: "Backend" },
+        {
+            icon: `${CDN}/csharp/csharp-original.svg`,
+            name: "C#",
+            category: "Backend",
+        },
+        {
+            icon: `${CDN}/java/java-original.svg`,
+            name: "Java",
             category: "Backend",
         },
 
+        // ---- Systems ----
         {
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oauth/oauth-original.svg",
-            name: "OAuth 2.0",
-            category: "Security",
+            icon: `${CDN}/cplusplus/cplusplus-original.svg`,
+            name: "C++",
+            category: "Systems",
+        },
+        { icon: `${CDN}/c/c-original.svg`, name: "C", category: "Systems" },
+        {
+            icon: `${CDN}/rust/rust-original.svg`,
+            name: "Rust",
+            category: "Systems",
+            invertOnDark: true,
         },
         {
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg",
+            icon: `${CDN}/lua/lua-original.svg`,
+            name: "Lua",
+            category: "Systems",
+        },
+        {
+            icon: "https://www.svgrepo.com/show/373541/cuda.svg",
+            name: "CUDA",
+            category: "Systems",
+        },
+        {
+            icon: `${CDN}/cmake/cmake-original.svg`,
+            name: "CMake",
+            category: "Systems",
+        },
+
+        // ---- AI/ML ----
+        {
+            icon: `${CDN}/pytorch/pytorch-original.svg`,
+            name: "PyTorch",
+            category: "AI/ML",
+        },
+        {
+            icon: `${CDN}/numpy/numpy-original.svg`,
+            name: "NumPy",
+            category: "AI/ML",
+        },
+        {
+            icon: `${CDN}/pandas/pandas-original.svg`,
+            name: "Pandas",
+            category: "AI/ML",
+            invertOnDark: true,
+        },
+        {
+            icon: `${CDN}/opencv/opencv-original.svg`,
+            name: "OpenCV",
+            category: "AI/ML",
+        },
+        {
+            icon: `${CDN}/scikitlearn/scikitlearn-original.svg`,
+            name: "scikit-learn",
+            category: "AI/ML",
+        },
+
+        // ---- 3D & XR ----
+        {
+            icon: `${CDN}/unrealengine/unrealengine-original.svg`,
+            name: "Unreal Engine",
+            category: "3D & XR",
+            invertOnDark: true,
+        },
+        {
+            icon: `${CDN}/unity/unity-original.svg`,
+            name: "Unity",
+            category: "3D & XR",
+            invertOnDark: true,
+        },
+
+        // ---- Database ----
+        {
+            icon: `${CDN}/sqlite/sqlite-original.svg`,
+            name: "SQLite",
+            category: "Database",
+        },
+        {
+            icon: `${CDN}/mysql/mysql-original-wordmark.svg`,
             name: "MySQL",
             category: "Database",
         },
-        { icon: "devicon-git-plain", name: "Git", category: "Tools" },
-        { icon: "devicon-pytorch-plain", name: "PyTorch", category: "AI/ML" },
         {
-            icon: "devicon-jupyter-plain",
-            name: "Jupyter",
-            category: "AI/ML",
+            icon: `${CDN}/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg`,
+            name: "MS SQL Server",
+            category: "Database",
         },
-        { icon: "devicon-rust-plain", name: "Rust", category: "Systems" },
+
+        // ---- Cloud & DevOps ----
         {
-            icon: "devicon-unrealengine-plain",
-            name: "Unreal Engine",
-            category: "Game Dev",
-        },
-        {
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
-            name: "Go",
-            category: "Backend",
+            icon: `${CDN}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+            name: "AWS (EC2, S3)",
+            category: "Cloud & DevOps",
+            invertOnDark: true,
         },
         {
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-            name: "Python",
-            category: "AI/ML",
+            icon: `${CDN}/cloudflare/cloudflare-original.svg`,
+            name: "Cloudflare",
+            category: "Cloud & DevOps",
+        },
+        {
+            icon: `${CDN}/linux/linux-original.svg`,
+            name: "Linux",
+            category: "Cloud & DevOps",
+        },
+        {
+            icon: `${CDN}/git/git-original.svg`,
+            name: "Git",
+            category: "Cloud & DevOps",
+        },
+        {
+            icon: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo-perforce-icon-reg.svg",
+            name: "Perforce",
+            category: "Cloud & DevOps",
+        },
+        {
+            icon: `${CDN}/github/github-original.svg`,
+            name: "GitHub Actions",
+            category: "Cloud & DevOps",
+            invertOnDark: true,
+        },
+
+        // ---- Automation & Security ----
+        {
+            icon: "https://www.svgrepo.com/show/443513/brand-uipath.svg",
+            name: "UiPath",
+            category: "Automation & Security",
+            invertOnDark: true,
+        },
+        {
+            icon: `${CDN}/oauth/oauth-original.svg`,
+            name: "OAuth 2.0",
+            category: "Automation & Security",
         },
     ];
 
@@ -80,14 +233,6 @@ const TechStacksSection: React.FC = () => {
         {} as Record<string, TechStackItem[]>
     );
 
-    // Function to determine grid class based on tech count
-    const getGridClass = (count: number): string => {
-        if (count === 1) return "flex flex-wrap justify-center gap-8";
-        if (count <= 2) return "flex flex-wrap justify-center gap-18";
-        if (count <= 3) return "flex flex-wrap justify-center gap-28";
-        return "grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5";
-    };
-
     return (
         <section id="tech" className="flex min-h-screen items-center pt-20">
             <div className="container mx-auto px-4">
@@ -101,26 +246,25 @@ const TechStacksSection: React.FC = () => {
                             {category}
                         </h2>
 
-                        <div className={getGridClass(techs.length)}>
+                        {/* One consistent, centered grid for every category */}
+                        <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-x-12 gap-y-10">
                             {techs.map((tech, index) => (
                                 <div
                                     key={index}
-                                    className="group flex flex-col items-center transition-transform duration-200 hover:scale-110"
+                                    className="group flex w-20 flex-col items-center transition-transform duration-200 hover:scale-110 md:w-24"
                                 >
-                                    <div className="mb-3 text-5xl md:text-6xl">
-                                        {tech.icon.startsWith("http") ? (
-                                            <img
-                                                src={tech.icon}
-                                                alt={tech.name}
-                                                className="h-14 w-14 md:h-20 md:w-20"
-                                            />
-                                        ) : (
-                                            <i
-                                                className={`${tech.icon} colored`}
-                                            ></i>
-                                        )}
+                                    <div className="flex h-16 w-16 items-center justify-center md:h-20 md:w-20">
+                                        <img
+                                            src={tech.icon}
+                                            alt={tech.name}
+                                            className={`h-14 w-14 object-contain md:h-16 md:w-16 ${
+                                                tech.invertOnDark
+                                                    ? "dark:brightness-0 dark:invert"
+                                                    : ""
+                                            }`}
+                                        />
                                     </div>
-                                    <span className="text-center text-sm font-medium opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                                    <span className="mt-3 text-center text-sm font-medium opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                                         {tech.name}
                                     </span>
                                 </div>
